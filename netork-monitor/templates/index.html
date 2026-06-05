@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Network Monitor</title>
+</head>
+
+<body>
+
+<h1>Network Monitoring Dashboard</h1>
+
+<table border="1">
+
+<tr>
+    <th>Name</th>
+    <th>IP</th>
+    <th>Status</th>
+    <th>Latency</th>
+    <th>Time</th>
+</tr>
+
+{% for d in devices %}
+
+<tr>
+    <td>{{ d[1] }}</td>
+    <td>{{ d[2] }}</td>
+    <td>{{ d[3] }}</td>
+    <td>{{ d[4] }} ms</td>
+    <td>{{ d[5] }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+
+</html>

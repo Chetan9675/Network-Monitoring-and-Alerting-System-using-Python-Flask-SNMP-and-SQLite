@@ -1,0 +1,21 @@
+import sqlite3
+
+conn = sqlite3.connect("database.db")
+
+cursor = conn.cursor()
+
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS devices(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    ip TEXT,
+    status TEXT,
+    latency REAL,
+    last_check TEXT
+)
+""")
+
+conn.commit()
+conn.close()
+
+print("Database Created")
